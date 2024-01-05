@@ -1,5 +1,7 @@
 package com.example.eventsystem.entities;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -32,11 +34,11 @@ public class Atividade {
 	private Categoria categoria;
 
 	@ManyToMany
-	@JoinTable(name = "tb_atividade_categoria", joinColumns = @JoinColumn(name = "atividade_id"), inverseJoinColumns = @JoinColumn(name = "categoria_id"))
-	private Set<Participante> participantes;
+	@JoinTable(name = "tb_atividade_participante", joinColumns = @JoinColumn(name = "atividade_id"), inverseJoinColumns = @JoinColumn(name = "participante_id"))
+	private Set<Participante> participantes=new HashSet<>();
 
 	@OneToMany(mappedBy = "atividade")
-	private List<Bloco> blocos;
+	private List<Bloco> blocos=new ArrayList<>();
 
 	public Atividade() {
 

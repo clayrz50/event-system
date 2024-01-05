@@ -1,5 +1,6 @@
 package com.example.eventsystem.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,7 +19,7 @@ public class Categoria {
 	private Integer id;
 	private String descricao;
 	@OneToMany(mappedBy = "categoria")
-	private List<Atividade> atividades;
+	private List<Atividade> atividades=new ArrayList<>();
 
 	public Categoria() {
 	}

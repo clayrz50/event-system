@@ -1,5 +1,6 @@
 package com.example.eventsystem.entities;
 
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -20,7 +21,7 @@ public class Participante {
 	private String email;
 
 	@ManyToMany(mappedBy = "participantes")
-	private Set<Atividade> atividades;
+	private Set<Atividade> atividades=new HashSet<>();
 
 	public Participante() {
 	}
